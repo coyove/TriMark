@@ -468,11 +468,23 @@ https://www.dice.com
     button {
         padding: 4px 6px;
     }
+    code {
+        font-family: 'Courier New', Courier, monospace;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
     #output {
         font-family: 'Courier New', Courier, monospace;
         resize:none;
         width: 100%;
         border: dashed 1px #ccc;
+    }
+    #title {
+        font-size: 3em;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        color: black;
     }
     table, p{
         border-collapse: collapse;
@@ -493,7 +505,9 @@ https://www.dice.com
 <body>
     <table>
         <tr>
-            <td colspan="2"><h3 style="font-size: 3em;text-align: center">TriMark</h3></td>
+            <td colspan="2">
+                <a  id="title" href="https://github.com/coyove/TriMark">TriMark</a>
+            </td>
         </tr>
         <tr>
             <td>Time Frame:</td>
@@ -540,6 +554,9 @@ https://www.dice.com
         If you have to place the bookmarklet into somewhere that doesn't support triple-click (e.g. Chrome's dropdown menu), try increase "Time Frame" so you can "click three times" to trigger the real URL.<br><br>
         <img src="data:image/png;base64,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"><br><Br>
 
+        You can also add this to your favorites to make life easier:<br>
+        <code>
         javascript:window.open('https://coyove.github.io/TriMark/?'+location.href)
+        </code>
     </p>
 </body>
