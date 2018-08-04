@@ -528,12 +528,10 @@ https://www.dice.com
     <script>
         var urls=window.V('dummies').split('\n');
         window.I('dummy-url').value=urls[parseInt(Math.random() * urls.length)];
-        var last = location.href.split('?').pop();
-        if (!location.href.startsWith(last)) {
-            window.I('real-url').value = last;
-            window.I('gen').click();
-            window.close();
-        }
+        var last = location.href.split('?');
+        last.shift();
+        window.I('real-url').value = last.join('?');
+        window.I('gen').click();
     </script>
     <p style="text-align: justify; margin-top: 10px">
         TriMark is a simple tool which generates a special bookmarklet to help you hide some secrets:<br><br>
